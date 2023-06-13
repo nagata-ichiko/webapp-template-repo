@@ -22,3 +22,19 @@ web アプリ作成テンプレート
 
 - 起動
   `docker compose up`
+
+# DB ドキュメント出力
+
+`docker-compose up schemaspy`
+
+# テスト実行方法
+
+`docker-compose up api-test`
+
+# storybook 起動方法
+
+`docker-compose up -d storybook`
+
+# swagger の mock サーバー立ち上げ方法
+
+`docker-compose up -d swagger-api`
