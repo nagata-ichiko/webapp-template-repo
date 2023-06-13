@@ -1,8 +1,8 @@
 version: "3.8"
 services:
   api:
-    container_name: nest-template
-    build: ./nest-template
+    container_name: nestjs-template-repo
+    build: ./nestjs-template-repo
     tty: true
     environment:
       PORT: ${BACKEND_PORT}
@@ -13,12 +13,12 @@ services:
     ports:
       - "3001:${BACKEND_PORT}"
     volumes:
-      - ./nest-template:/api
+      - ./nestjs-template-repo:/api
     depends_on:
       - db
     command: sh -c "npm install  && npm run build && npm run start:debug"
   front:
-    build: ./next-template
+    build: ./nextjs-template-repo
     tty: true
     environment:
       BACKEND_URL: ${BACKEND_URL}
@@ -26,7 +26,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./next-template/src:/src
+      - ./nextjs-template-repo/src:/src
     command: sh -c "npm install && npm run dev"
 
   db:
