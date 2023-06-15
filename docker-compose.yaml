@@ -78,7 +78,7 @@ services:
     ports:
       - "6006:6006"
     volumes:
-      - ./nextjs-template-repo/app:/app
+      - ./nextjs-template-repo:/app
     command: sh -c "npm install && npm run storybook"
     profiles:
       - "extra"
